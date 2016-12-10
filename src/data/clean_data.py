@@ -84,12 +84,12 @@ def fill_construction_year(train, test):
     Input: 2 pandas dataframes
     Output: 2 pandas dataframes'''
 
-    dummies_train = pd.get_dummies(train[['basin', 'extraction_type_class', 'management', 'water_quality', 'quantity']])
+    dummies_train = pd.get_dummies(train[['basin', 'extraction_type_class', 'management', 'water_quality', 'quantity', 'source']])
     train = pd.concat([train, dummies_train], axis=1)
     clean_constr_train = train.drop(['funder', 'installer', 'wpt_name', 'basin', 'subvillage', 'region', 'lga', 'ward', 'scheme_management', 'scheme_name', 'extraction_type', 'management', 'management_group', 'payment', 'payment_type', 'water_quality', 'quality_group', 'quantity'\
      'source', 'source_type', 'waterpoint_type', 'recorded_by', 'extraction_type_group', 'extraction_type_class', 'quantity_group', 'source_class', 'waterpoint_type_group', 'region_code', 'district_code', 'status_group', 'id', 'population'], axis=1)
 
-    dummies_test = pd.get_dummies(test[['basin', 'extraction_type_class', 'management', 'water_quality', 'quantity']])
+    dummies_test = pd.get_dummies(test[['basin', 'extraction_type_class', 'management', 'water_quality', 'quantity', 'source']])
     test = pd.concat([test, dummies_test], axis=1)
     clean_constr_test = test.drop(['funder', 'installer', 'wpt_name', 'basin', 'subvillage', 'region', 'lga', 'ward', 'scheme_management', 'scheme_name', 'extraction_type', 'management', 'management_group', 'payment', 'payment_type', 'water_quality', 'quality_group', 'quantity',\
      'source', 'source_type', 'waterpoint_type', 'recorded_by', 'extraction_type_group', 'extraction_type_class', 'quantity_group', 'source_class', 'waterpoint_type_group', 'region_code', 'district_code', 'id', 'population'], axis=1)
