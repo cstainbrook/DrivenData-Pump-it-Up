@@ -3,6 +3,7 @@ import os
 import click
 import logging
 from dotenv import find_dotenv, load_dotenv
+import pandas as pd
 
 
 @click.command()
